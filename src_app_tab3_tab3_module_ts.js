@@ -418,9 +418,12 @@ let Tab3Page = class Tab3Page {
     constructor(votes, router) {
         this.votes = votes;
         this.router = router;
+        this.partyName = '';
     }
     ngOnInit() {
         this.isDemocrat = this.votes.getUserIsDem();
+        this.isThird = this.votes.getUserIsThird();
+        this.partyName = this.votes.thirdPartyName;
     }
     campaign() {
         this.router.navigateByUrl('tabs/tab3/campaign');
@@ -549,7 +552,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Instructions\n      <img class='header-icon' *ngIf=\"!isDemocrat\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat\" src=\"../../assets/images/democratIcon.png\">\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">Instructions</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <div class=\"center\">\n  <p>Hello Senator! How can I help you?</p>\n  </div>\n  <img id=\"aid\" src=\"../../../assets/images/aid.png\">\n  <ion-button (click)='turn()' style=\"padding-left: 20px;\">What to do on my turn?</ion-button>\n  <ion-button (click)='advertise()' style=\"padding-left: 20px;\">Info on Advertizing?</ion-button>\n  <ion-button (click)='campaign()' style=\"padding-left: 20px;\">Info on Campaigning?</ion-button>\n  <ion-button (click)='fundraise()' style=\"padding-left: 20px;\">Info on Fundraising?</ion-button>\n  <ion-button (click)='debate()' style=\"padding-left: 20px;\">Info on Debates?</ion-button>\n  <ion-button (click)='event()' style=\"padding-left: 20px;\">Info on Special Events?</ion-button>\n  <ion-button (click)=\"reset()\" style=\"padding-left: 20px;\" color=\"danger\">Forfeit the race</ion-button>\n\n</ion-content>\n";
+module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Instructions\n      <img class='header-icon' *ngIf=\"!isDemocrat && !isThird\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat && !isThird\" src=\"../../assets/images/democratIcon.png\">\n      <h1 *ngIf=\"isThird\">{{partyName}}</h1>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">Instructions</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <div class=\"center\">\n  <p>Hello! How can I help you?</p>\n  </div>\n  <img id=\"aid\" src=\"../../../assets/images/aid.png\">\n  <ion-button (click)='turn()' style=\"padding-left: 20px;\">What to do on my turn?</ion-button>\n  <ion-button (click)='advertise()' style=\"padding-left: 20px;\">Info on Advertizing?</ion-button>\n  <ion-button (click)='campaign()' style=\"padding-left: 20px;\">Info on Campaigning?</ion-button>\n  <ion-button (click)='fundraise()' style=\"padding-left: 20px;\">Info on Fundraising?</ion-button>\n  <ion-button (click)='debate()' style=\"padding-left: 20px;\">Info on Debates?</ion-button>\n  <ion-button (click)='event()' style=\"padding-left: 20px;\">Info on Special Events?</ion-button>\n  <ion-button (click)=\"reset()\" style=\"padding-left: 20px;\" color=\"danger\">Forfeit the race</ion-button>\n\n</ion-content>\n";
 
 /***/ })
 

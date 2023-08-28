@@ -36,7 +36,7 @@ let IntroPage = class IntroPage {
     toTabs() {
         this.audio.play('chief');
         if (!this.passwordRequired || this.passcode === 'jonaslinde') {
-            this.route.navigateByUrl('/welcome');
+            this.route.navigateByUrl('/options'); //Jermy TODO was options but I changed it
         }
     }
 };
@@ -84,7 +84,7 @@ const routes = [
     {
         path: 'welcome',
         component: _welcome_component__WEBPACK_IMPORTED_MODULE_1__.WelcomePage
-    }
+    },
 ];
 let IntroRoutingModule = class IntroRoutingModule {
 };
@@ -199,7 +199,7 @@ WelcomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \****************************************************************/
 /***/ ((module) => {
 
-module.exports = ".game-title {\r\n  padding-top: 40%;\r\n  text-align: center;\r\n  font-size: 38px;\r\n};\r\n\r\n.container {\r\n  height: 200px;\r\n  position: relative;\r\n}\r\n\r\n.center {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n.bg-image {\r\n    background: url('background.png')!important;\r\n    background-size: cover!important;\r\n    background-repeat: no-repeat;\r\n    height: 95%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludHJvLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQixDQUFBOztBQUVBO0VBQ0UsYUFBYTtFQUNiLGtCQUFrQjtBQUNwQjs7QUFHQTtFQUNFLGtCQUFrQjtFQUNsQixRQUFRO0VBQ1IsU0FBUztFQUVULGdDQUFnQztBQUNsQzs7QUFFQTtJQUNJLDJDQUErRDtJQUMvRCxnQ0FBZ0M7SUFDaEMsNEJBQTRCO0lBQzVCLFdBQVc7QUFDZiIsImZpbGUiOiJpbnRyby1wYWdlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZ2FtZS10aXRsZSB7XHJcbiAgcGFkZGluZy10b3A6IDQwJTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZm9udC1zaXplOiAzOHB4O1xyXG59O1xyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcblxyXG4uY2VudGVyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIC1tcy10cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxufVxyXG5cclxuLmJnLWltYWdlIHtcclxuICAgIGJhY2tncm91bmQ6IHVybChcIi4uLy4uL2Fzc2V0cy9pbWFnZXMvYmFja2dyb3VuZC5wbmdcIikhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlciFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgaGVpZ2h0OiA5NSU7XHJcbn1cclxuIl19 */";
+module.exports = ".game-title {\r\n  padding-top: 40%;\r\n  text-align: center;\r\n  font-size: 38px;\r\n}\r\n\r\n.container {\r\n  height: 200px;\r\n  position: relative;\r\n}\r\n\r\n.center {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n.bg-image {\r\n    background: url('background.png')!important;\r\n    background-size: cover!important;\r\n    background-repeat: no-repeat;\r\n    height: 95%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImludHJvLXBhZ2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixrQkFBa0I7QUFDcEI7O0FBR0E7RUFDRSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLFNBQVM7RUFFVCxnQ0FBZ0M7QUFDbEM7O0FBRUE7SUFDSSwyQ0FBK0Q7SUFDL0QsZ0NBQWdDO0lBQ2hDLDRCQUE0QjtJQUM1QixXQUFXO0FBQ2YiLCJmaWxlIjoiaW50cm8tcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmdhbWUtdGl0bGUge1xyXG4gIHBhZGRpbmctdG9wOiA0MCU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGZvbnQtc2l6ZTogMzhweDtcclxufVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcblxyXG4uY2VudGVyIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiA1MCU7XHJcbiAgbGVmdDogNTAlO1xyXG4gIC1tcy10cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxufVxyXG5cclxuLmJnLWltYWdlIHtcclxuICAgIGJhY2tncm91bmQ6IHVybChcIi4uLy4uL2Fzc2V0cy9pbWFnZXMvYmFja2dyb3VuZC5wbmdcIikhaW1wb3J0YW50O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlciFpbXBvcnRhbnQ7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgaGVpZ2h0OiA5NSU7XHJcbn1cclxuIl19 */";
 
 /***/ }),
 
@@ -219,7 +219,7 @@ module.exports = ".center {\r\n  font-size: large;\r\n  text-align: center;\r\n 
   \*****************************************************************/
 /***/ ((module) => {
 
-module.exports = "\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\"ion-no-padding bg-image\">\r\n  <div class=\"background\">\r\n    <div class=\"container\">\r\n      <div class=\"center\">\r\n        <form *ngIf=\"passwordRequired\">\r\n          <ion-item lines=\"full\">\r\n            <ion-label position=\"floating\">Password</ion-label>\r\n            <ion-input type=\"text\" name='passcode' [(ngModel)]=\"passcode\" required></ion-input>\r\n          </ion-item>\r\n        </form>\r\n        <ion-button (click)=\"toTabs()\">Start 1 player</ion-button>\r\n        <br>\r\n        <ion-button [disabled]=\"true\" (click)=\"toTabs()\">Start 2 player</ion-button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+module.exports = "\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\"ion-no-padding bg-image\">\r\n  <div class=\"background\">\r\n    <div class=\"container\">\r\n      <div class=\"center\">\r\n        <form *ngIf=\"passwordRequired\">\r\n          <ion-item lines=\"full\">\r\n            <ion-label position=\"floating\">Password</ion-label>\r\n            <ion-input type=\"text\" name='passcode' [(ngModel)]=\"passcode\" required></ion-input>\r\n          </ion-item>\r\n        </form>\r\n        <ion-button (click)=\"toTabs()\">Start 1 player</ion-button>\r\n        <br>\r\n        <!-- <ion-button [disabled]=\"true\" (click)=\"toTabs()\">Start 2 player</ion-button> -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </ion-grid>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -229,7 +229,7 @@ module.exports = "\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid cla
   \**************************************************************/
 /***/ ((module) => {
 
-module.exports = "\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\"ion-no-padding bg-image\">\r\n  <div class=\"background\">\r\n    <div class=\"container\">\r\n      <div class=\"center\">\r\n      <h1 id=\"title\">Hello There Senator!</h1>\r\n    </div>\r\n    <div class=\"center\">\r\n      <p id=\"info1\">My name is Paige and I am your campaign manager!</p>\r\n    </div>\r\n    <div class=\"center\">\r\n\r\n      <p id=\"info2\">It is my job to make sure you have everything you need to win the presidency!</p></div>\r\n      <div class=\"center\">\r\n        <p id=\"info3\">We are on our way to campaign headquarters now...</p></div>\r\n        <div class=\"center\">\r\n          <p id=\"info4\">That's where you can campaign, and see a map of the current state of the race</p></div>\r\n          <div class=\"center\">\r\n            <p id=\"info5\">You can reach me in the HELP tab if you need anything</p></div>\r\n      <img id=\"aid\" src=\"../../../assets/images/aid.png\">\r\n      <div id=\"ready\" class=\"center\">\r\n        <p id=\"info6\">If you are ready to go, let's campaign!</p>\r\n\r\n        <ion-button (click)=\"continue()\">Ready</ion-button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+module.exports = "\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\"ion-no-padding bg-image\">\r\n  <div class=\"background\">\r\n    <div class=\"container\">\r\n      <div class=\"center\">\r\n      <h1 id=\"title\">Hello There Candadit!</h1>\r\n    </div>\r\n    <div class=\"center\">\r\n      <p id=\"info1\">My name is Paige and I am your campaign manager!</p>\r\n    </div>\r\n    <div class=\"center\">\r\n\r\n      <p id=\"info2\">It is my job to make sure you have everything you need to win the presidency!</p></div>\r\n      <div class=\"center\">\r\n        <p id=\"info3\">We are on our way to campaign headquarters now...</p></div>\r\n        <div class=\"center\">\r\n          <p id=\"info4\">That's where you can campaign, and see a map of the current state of the race</p></div>\r\n          <div class=\"center\">\r\n            <p id=\"info5\">You can reach me in the HELP tab if you need anything</p></div>\r\n      <img id=\"aid\" src=\"../../../assets/images/aid.png\">\r\n      <div id=\"ready\" class=\"center\">\r\n        <p id=\"info6\">If you are ready to go, let's campaign!</p>\r\n\r\n        <ion-button (click)=\"continue()\">Ready</ion-button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  </ion-grid>\r\n</ion-content>\r\n";
 
 /***/ })
 

@@ -28,37 +28,35 @@ let AudioService = class AudioService {
         this.forceWebAudio = true;
     }
     preload(key, asset) {
-        if (this.platform.is('cordova') && !this.forceWebAudio) {
-            this.nativeAudio.preloadSimple(key, asset);
-            this.sounds.push({
-                key,
-                asset,
-                isNative: true
-            });
-        }
-        else {
-            const audio = new Audio();
-            audio.src = asset;
-            this.sounds.push({
-                key,
-                asset,
-                isNative: false
-            });
-        }
+        // if(this.platform.is('cordova') && !this.forceWebAudio){
+        //   this.nativeAudio.preloadSimple(key, asset);
+        //   this.sounds.push({
+        //     key,
+        //     asset,
+        //     isNative: true
+        //   });
+        // } else {
+        //   const audio = new Audio();
+        //   audio.src = asset;
+        //   this.sounds.push({
+        //     key,
+        //     asset,
+        //     isNative: false
+        //   });
+        // }
     }
     play(key) {
-        const soundToPlay = this.sounds.find((sound) => sound.key === key);
-        if (soundToPlay.isNative) {
-            this.nativeAudio.play(soundToPlay.asset).then((res) => {
-                console.log(res);
-            }, (err) => {
-                console.log(err);
-            });
-        }
-        else {
-            this.audioPlayer.src = soundToPlay.asset;
-            this.audioPlayer.play();
-        }
+        // const soundToPlay = this.sounds.find((sound) => sound.key === key);
+        // if(soundToPlay.isNative){
+        //   this.nativeAudio.play(soundToPlay.asset).then((res) => {
+        //     console.log(res);
+        //   }, (err) => {
+        //     console.log(err);
+        //   });
+        // } else {
+        //   this.audioPlayer.src = soundToPlay.asset;
+        //   this.audioPlayer.play();
+        // }
     }
 };
 AudioService.ctorParameters = () => [
