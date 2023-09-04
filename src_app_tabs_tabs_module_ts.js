@@ -126,6 +126,13 @@ __webpack_require__.r(__webpack_exports__);
 let TabsPage = class TabsPage {
     constructor(router) {
         this.router = router;
+        this.actionPending = false;
+    }
+    actionStart() {
+        this.actionPending = true;
+    }
+    actionEnd() {
+        this.actionPending = false;
     }
     isTab1() {
         if (this.router.url.includes('tab1')) {
@@ -167,7 +174,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\" [disabled]=\"isTab1()\">\n      <ion-icon name=\"play\"></ion-icon>\n      <ion-label>Play</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"analytics\"></ion-icon>\n      <ion-label>Stats</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"help\"></ion-icon>\n      <ion-label>Help</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
+module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\" [disabled]=\"actionPending && isTab1()\">\n      <ion-icon name=\"play\"></ion-icon>\n      <ion-label>Play</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\" [disabled]=\"actionPending\">\n      <ion-icon name=\"analytics\"></ion-icon>\n      <ion-label>Stats</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\" [disabled]=\"actionPending\">\n      <ion-icon name=\"help\"></ion-icon>\n      <ion-label>Help</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
 
 /***/ })
 

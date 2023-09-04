@@ -472,7 +472,7 @@ Tab3Page = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = ".center {\r\n  font-size: large;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  left: 50%\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZm8uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQjtBQUNGIiwiZmlsZSI6ImluZm8uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNlbnRlciB7XHJcbiAgZm9udC1zaXplOiBsYXJnZTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGxlZnQ6IDUwJVxyXG59XHJcbiJdfQ== */";
+module.exports = ".center {\r\n  font-size: large;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  left: 50%\r\n}\r\n\r\n.group {\r\n  margin-top: 6px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZm8uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQjtBQUNGOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJpbmZvLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jZW50ZXIge1xyXG4gIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBsZWZ0OiA1MCVcclxufVxyXG5cclxuLmdyb3VwIHtcclxuICBtYXJnaW4tdG9wOiA2cHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogNnB4O1xyXG59XHJcbiJdfQ== */";
 
 /***/ }),
 
@@ -492,7 +492,7 @@ module.exports = "p {\n  text-align: center;\n}\n\nh1 {\n  text-align: center;\n
   \**********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\r\n<h1>Advertise</h1>\r\n</div>\r\n<div class=\"center\">\r\n<p>After fundraising you can target a group of states with a TV advertisement</p>\r\n</div>\r\n<div class=\"center\">\r\n<p>The groups of states are: (HI, CA, WA, OR) (WI, IA, MI, OH) (IL, MN) (FL, NC, GA) (TX) (ME, NH, VA, PA) (NM, CO, NV, AZ) (SC, MO, IN, MT, MS, AK, LA)</p>\r\n</div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div></ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\r\n<h1>Advertise</h1>\r\n</div>\r\n<div class=\"center\">\r\n<p>TV advertisements target a specific group of states</p>\r\n<p>They can be run after you have fundraised</p>\r\n</div>\r\n<div class=\"center\">\r\n<p>The groups of states are:</p>\r\n</div>\r\n<div class=\"center\">\r\n  <p class=\"group\">(HI, CA, WA, OR)</p>\r\n  </div><div class=\"center\">\r\n    <p class=\"group\"> (WI, IA, MI, OH)</p>\r\n    </div><div class=\"center\">\r\n      <p class=\"group\">(IL, MN)</p>\r\n      </div><div class=\"center\">\r\n        <p class=\"group\">(FL, NC, GA))</p>\r\n        </div><div class=\"center\">\r\n          <p class=\"group\">(ME, NH, VA, PA)</p>\r\n          </div><div class=\"center\">\r\n            <p class=\"group\">(NM, CO, NV, AZ) </p>\r\n            </div><div class=\"center\">\r\n              <p class=\"group\">(SC, MO, IN, MT, MS, AK, LA)</p>\r\n              </div><div class=\"center\">\r\n                <p class=\"group\">(TX)</p>\r\n                </div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div></ion-content>\r\n";
 
 /***/ }),
 
@@ -502,7 +502,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\
   \*********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n<h1>Campaign</h1>\r\n</div>\r\n<div class=\"center\">\r\n<p>Go to any state and campaign for free!</p>\r\n</div>\r\n<div class=\"center\">\r\n<p>Campaigning in states that are further from your party affiliation will have less of an effect.</p>\r\n</div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n<h1>Campaign</h1>\r\n</div>\r\n<div class=\"center\">\r\n<p>Go to any state and campaign for free!</p>\r\n</div>\r\n<div class=\"center\">\r\n<p>Campaigning in states that are further from your party affiliation will have less of an effect,\r\n  so it is smart to campaign in states that have close races.\r\n</p>\r\n</div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -522,7 +522,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \******************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Event</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Events that help you include Endorsement, SuperPac, and Media Tour</p>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Events that hurt you include hot topic, Scandal, Gaff and a few more</p>\r\n</div>\r\n\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div></ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Event</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Special Events happen after each round (10 total) and can have big effects on the race</p>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Some events will affect a few states, and some will affect the entire country</p>\r\n</div>\r\n<div class=\"center\">\r\n\r\n  <p>Many of the events are based on real events from history!</p>\r\n  </div>\r\n\r\n<div class=\"center\">\r\n  <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n  </div></ion-content>\r\n";
 
 /***/ }),
 
@@ -532,7 +532,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \**********************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Fundraise</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>You need money to run Advertising.  Advertising is a very powerful tool to swaying the vote,\r\n  so it is worth the investment of a turn to fundraise.</p>\r\n  </div>\r\n\r\n  <div class=\"center\">\r\n    <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n    </div></ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Fundraise</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>You need money to run Advertising.  Advertising is a very powerful tool to swaying the vote,\r\n  so it is worth the investment of a turn to fundraise.</p>\r\n  </div>\r\n  <div class=\"center\">\r\n\r\n    <p>Each time you fundraise, you will earn $10 million or $20 million,\r\n       which will allow you to run 1 or 2 advertisements\r\n    </p>\r\n      </div>\r\n  <div class=\"center\">\r\n    <ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n    </div></ion-content>\r\n";
 
 /***/ }),
 
@@ -542,7 +542,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \*****************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Turn</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>On your turn you select CAMPAIGN, ADVERTIZE, or FUNDRAISE.</p>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Go ahead and try them all out! Each is an important part of a winning campaign</p>\r\n</div>\r\n\r\n<div class=\"center\">\r\n<ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n</div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n\r\n<h1>Turn</h1>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>On your turn you select CAMPAIGN, ADVERTIZE, or FUNDRAISE.</p>\r\n</div>\r\n<div class=\"center\">\r\n\r\n<p>Go ahead and try them all out! Each is an important part of a winning campaign</p>\r\n</div>\r\n\r\n<div class=\"center\">\r\n  <p>You get 2 turns each round, for a total of 20 turns</p>\r\n</div>\r\n\r\n<div class=\"center\">\r\n<ion-button (click)=\"continue()\">Back to main HELP page</ion-button>\r\n</div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -552,7 +552,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Instructions\n      <img class='header-icon' *ngIf=\"!isDemocrat && !isThird\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat && !isThird\" src=\"../../assets/images/democratIcon.png\">\n      <h1 *ngIf=\"isThird\">{{partyName}}</h1>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">Instructions</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <div class=\"center\">\n  <p>Hello! How can I help you?</p>\n  </div>\n  <img id=\"aid\" src=\"../../../assets/images/aid.png\">\n  <ion-button (click)='turn()' style=\"padding-left: 20px;\">What to do on my turn?</ion-button>\n  <ion-button (click)='advertise()' style=\"padding-left: 20px;\">Info on Advertizing?</ion-button>\n  <ion-button (click)='campaign()' style=\"padding-left: 20px;\">Info on Campaigning?</ion-button>\n  <ion-button (click)='fundraise()' style=\"padding-left: 20px;\">Info on Fundraising?</ion-button>\n  <ion-button (click)='debate()' style=\"padding-left: 20px;\">Info on Debates?</ion-button>\n  <ion-button (click)='event()' style=\"padding-left: 20px;\">Info on Special Events?</ion-button>\n  <ion-button (click)=\"reset()\" style=\"padding-left: 20px;\" color=\"danger\">Forfeit the race</ion-button>\n\n</ion-content>\n";
+module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Instructions\n      <img class='header-icon' *ngIf=\"!isDemocrat && !isThird\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat && !isThird\" src=\"../../assets/images/democratIcon.png\">\n      <h1 *ngIf=\"isThird\">{{partyName}}</h1>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">Instructions</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <!-- <div class=\"center\">\n  <!-- <p>Hello! How can I help you?</p> -->\n  <!-- <img id=\"aid\" src=\"../../../assets/images/aid.png\"> -->\n  <div class=\"center\">\n  <ion-button (click)='turn()' style=\"padding-left: 20px;\">What to do on my turn?</ion-button>\n  </div>\n  <div class=\"center\">\n\n  <ion-button (click)='advertise()' style=\"padding-left: 20px;\">Info on Advertizing?</ion-button>\n</div>\n<div class=\"center\">\n\n  <ion-button (click)='campaign()' style=\"padding-left: 20px;\">Info on Campaigning?</ion-button>\n  </div>\n  <div class=\"center\">\n\n  <ion-button (click)='fundraise()' style=\"padding-left: 20px;\">Info on Fundraising?</ion-button>\n  </div>\n  <!-- <div class=\"center\">\n  <ion-button (click)='debate()' style=\"padding-left: 20px;\">Info on Debates?</ion-button>\n  </div> -->\n  <div class=\"center\">\n\n  <ion-button (click)='event()' style=\"padding-left: 20px;\">Info on Special Events?</ion-button>\n  </div>\n  <div class=\"center\">\n\n  <ion-button (click)=\"reset()\" style=\"padding-left: 20px;\" color=\"danger\">Forfeit the race</ion-button>\n  </div>\n\n\n</ion-content>\n";
 
 /***/ })
 

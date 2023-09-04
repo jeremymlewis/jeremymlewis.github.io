@@ -89,6 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 class State {
     constructor(name, abbreviation, electoralVotes, demPercentage, repPercentage, decided) {
         this.name = name;
+        this.protected = '';
         this.thirdPercent = -1;
         this.abbreviation = abbreviation;
         this.college = electoralVotes;
@@ -133,57 +134,57 @@ let VotesStore = class VotesStore {
         this.funds = 0;
         this.round = 1;
         this.turn = 0;
-        this.Alabama = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Alabama', 'AL', 9, 32, 49, true);
+        this.Alabama = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Alabama', 'AL', 9, 32, 49);
         this.Alaska = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Alaska', 'AK', 3, 33, 48);
         this.Arizona = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Arizona', 'AZ', 11, 40, 41);
         this.Arkansas = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Arkansas', 'AR', 6, 32, 49);
         this.California = new _state__WEBPACK_IMPORTED_MODULE_0__.State('California', 'CA', 54, 52, 30);
         this.Colorado = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Colorado', 'CO', 10, 42, 39);
-        this.Connecticut = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Connecticut', 'CT', 7, 46, 35, true);
-        this.Delaware = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Delaware', 'DE', 3, 45, 35, true);
-        this.DC = new _state__WEBPACK_IMPORTED_MODULE_0__.State('D.C.', 'DC', 3, 75, 7, true);
+        this.Connecticut = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Connecticut', 'CT', 7, 46, 35);
+        this.Delaware = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Delaware', 'DE', 3, 45, 35);
+        this.DC = new _state__WEBPACK_IMPORTED_MODULE_0__.State('D.C.', 'DC', 3, 75, 7);
         this.Florida = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Florida', 'FL', 30, 39, 41);
         this.Georgia = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Georgia', 'GA', 16, 39, 42);
         this.Hawaii = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Hawaii', 'HI', 4, 53, 28);
-        this.Idaho = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Idaho', 'ID', 4, 30, 51, true);
+        this.Idaho = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Idaho', 'ID', 4, 30, 51);
         this.Illinois = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Illinois', 'IL', 19, 48, 34);
-        this.Indiana = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Indiana', 'IN', 11, 30, 51, true);
+        this.Indiana = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Indiana', 'IN', 11, 30, 51);
         this.Iowa = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Iowa', 'IA', 6, 39, 43);
-        this.Kansas = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Kansas', 'KS', 6, 32, 49, true);
-        this.Kentucky = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Kentucky', 'KY', 8, 30, 51, true);
+        this.Kansas = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Kansas', 'KS', 6, 32, 49);
+        this.Kentucky = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Kentucky', 'KY', 8, 30, 51);
         this.Louisiana = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Louisiana', 'LA', 8, 32, 49);
         this.Maine = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Maine', 'ME', 4, 43, 39);
-        this.Maryland = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Maryland', 'MD', 10, 51, 31, true);
-        this.Massachusetts = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Massachusetts', 'MA', 11, 52, 30, true);
+        this.Maryland = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Maryland', 'MD', 10, 51, 31);
+        this.Massachusetts = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Massachusetts', 'MA', 11, 52, 30);
         this.Michigan = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Michigan', 'MI', 15, 42, 39);
         this.Minnesota = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Minnesota', 'MN', 10, 44, 39);
         this.Mississippi = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Mississippi', 'MS', 6, 34, 48);
         this.Missouri = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Missouri', 'MO', 10, 34, 46);
         this.Montana = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Montana', 'MT', 4, 34, 47);
-        this.Nebraska = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Nebraska', 'NE', 5, 32, 49, true);
+        this.Nebraska = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Nebraska', 'NE', 5, 32, 49);
         this.Nevada = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Nevada', 'NV', 6, 41, 40);
         this.NewHampshire = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New Hampshire', 'NH', 4, 42, 39);
-        this.NewJersey = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New Jersey', 'NJ', 14, 48, 34, true);
+        this.NewJersey = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New Jersey', 'NJ', 14, 48, 34);
         this.NewMexico = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New Mexico', 'NM', 5, 44, 37);
-        this.NewYork = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New York', 'NY', 28, 52, 30, true);
+        this.NewYork = new _state__WEBPACK_IMPORTED_MODULE_0__.State('New York', 'NY', 28, 52, 30);
         this.NorthCarolina = new _state__WEBPACK_IMPORTED_MODULE_0__.State('North Carolina', 'NC', 16, 40, 42);
-        this.NorthDakota = new _state__WEBPACK_IMPORTED_MODULE_0__.State('North Dakota', 'ND', 3, 31, 51, true);
+        this.NorthDakota = new _state__WEBPACK_IMPORTED_MODULE_0__.State('North Dakota', 'ND', 3, 31, 51);
         this.Ohio = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Ohio', 'OH', 17, 38, 43);
-        this.Oklahoma = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Oklahoma', 'OK', 7, 30, 51, true);
+        this.Oklahoma = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Oklahoma', 'OK', 7, 30, 51);
         this.Oregon = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Oregon', 'OR', 8, 45, 37);
         this.Pennsylvania = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Pennsylvania', 'PA', 19, 42, 40);
-        this.RhodeIsland = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Rhode Island', 'RI', 4, 50, 32, true);
+        this.RhodeIsland = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Rhode Island', 'RI', 4, 50, 32);
         this.SouthCarolina = new _state__WEBPACK_IMPORTED_MODULE_0__.State('South Carolina', 'SC', 9, 35, 46);
-        this.SouthDakota = new _state__WEBPACK_IMPORTED_MODULE_0__.State('South Dakota', 'SD', 3, 31, 51, true);
-        this.Tennessee = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Tennessee', 'TN', 11, 32, 49, true);
+        this.SouthDakota = new _state__WEBPACK_IMPORTED_MODULE_0__.State('South Dakota', 'SD', 3, 31, 51);
+        this.Tennessee = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Tennessee', 'TN', 11, 32, 49);
         this.Texas = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Texas', 'TX', 40, 37, 44);
         this.Utah = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Utah', 'UT', 6, 32, 49);
-        this.Vermont = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Vermont', 'VT', 3, 52, 30, true);
+        this.Vermont = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Vermont', 'VT', 3, 52, 30);
         this.Virginia = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Virginia', 'VA', 13, 42, 39);
         this.Washington = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Washington', 'WA', 12, 46, 35);
-        this.WestVirginia = new _state__WEBPACK_IMPORTED_MODULE_0__.State('West Virginia', 'WV', 4, 30, 51, true);
+        this.WestVirginia = new _state__WEBPACK_IMPORTED_MODULE_0__.State('West Virginia', 'WV', 4, 30, 51);
         this.Wisconsin = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Wisconsin', 'WI', 10, 41, 39);
-        this.Wyoming = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Wyoming', 'WY', 3, 29, 53, true);
+        this.Wyoming = new _state__WEBPACK_IMPORTED_MODULE_0__.State('Wyoming', 'WY', 3, 29, 53);
         this.states = [];
         this.NationalClimate = 0;
         this.states = [
@@ -260,6 +261,14 @@ let VotesStore = class VotesStore {
     }
     setUserIsDem(isDem) {
         this.isDemocrat = isDem;
+        for (const state of this.states) {
+            if (state.leansDem > 17 && !isDem) {
+                state.protected = '*';
+            }
+            else if (state.leansRep > 14 && isDem) {
+                state.protected = '*';
+            }
+        }
     }
     getAllStates() {
         return this.states;
@@ -345,10 +354,19 @@ let VotesStore = class VotesStore {
         }
         return decidedStates;
     }
+    getSafeStates() {
+        const safeStates = [];
+        for (const state of this.states) {
+            if (state.leansDem >= 21 || state.leansRep >= 20) {
+                safeStates.push(state);
+            }
+        }
+        return safeStates;
+    }
     getLeftLeanStates() {
         const leftLeanStates = [];
         for (const state of this.states) {
-            if (state.leansDem >= 5 && !state.decided) {
+            if (state.leansDem >= 5 && state.leansDem < 21) {
                 leftLeanStates.push(state);
             }
         }
@@ -357,7 +375,7 @@ let VotesStore = class VotesStore {
     getRightLeanStates() {
         const rightLeanStates = [];
         for (const state of this.states) {
-            if (state.leansRep >= 5 && !state.decided) {
+            if (state.leansRep >= 5 && state.leansRep < 20) {
                 rightLeanStates.push(state);
             }
         }
@@ -366,7 +384,7 @@ let VotesStore = class VotesStore {
     getTossUpsLeft() {
         const undecidedStates = [];
         for (const state of this.states) {
-            if (state.leansDem > 0 && state.leansDem < 5 && !state.decided) {
+            if (state.leansDem > 0 && state.leansDem < 5) {
                 undecidedStates.push(state);
             }
         }
@@ -375,7 +393,7 @@ let VotesStore = class VotesStore {
     getTossUps() {
         const undecidedStates = [];
         for (const state of this.states) {
-            if (state.leansDem === 0 && !state.decided) {
+            if (state.leansDem === 0) {
                 undecidedStates.push(state);
             }
         }
@@ -384,7 +402,7 @@ let VotesStore = class VotesStore {
     getTossUpsRight() {
         const undecidedStates = [];
         for (const state of this.states) {
-            if (state.leansRep > 0 && state.leansRep < 5 && !state.decided) {
+            if (state.leansRep > 0 && state.leansRep < 5) {
                 undecidedStates.push(state);
             }
         }
@@ -407,6 +425,17 @@ let VotesStore = class VotesStore {
                 state.repPercent += changeRight;
                 state.leansDem = state.demPercent - state.repPercent;
                 state.leansRep = state.repPercent - state.demPercent;
+            }
+        }
+    }
+    neutralizeStateClimate(abbreviaion) {
+        for (const state of this.states) {
+            if (state.abbreviation === abbreviaion) {
+                state.decided = false;
+                state.leansDem = 0;
+                state.demPercent = 40;
+                state.repPercent = 40;
+                state.leansRep = 0;
             }
         }
     }
@@ -565,6 +594,23 @@ let VotesStore = class VotesStore {
             this.Wisconsin,
             this.Wyoming
         ];
+    }
+    getStateIconByAbrev(abbreviation) {
+        abbreviation = abbreviation.toUpperCase();
+        for (const state of this.states) {
+            if (state.abbreviation === abbreviation) {
+                const hyphenatedName = state.name.replace(/ /g, '-');
+                return state.abbreviation + '-' + hyphenatedName + '.png';
+            }
+        }
+    }
+    getStateIconByName(name) {
+        for (const state of this.states) {
+            if (state.name === name) {
+                const hyphenatedName = state.name.replace(/ /g, '-');
+                return state.abbreviation + '-' + hyphenatedName + '.png';
+            }
+        }
     }
 };
 VotesStore.ctorParameters = () => [];

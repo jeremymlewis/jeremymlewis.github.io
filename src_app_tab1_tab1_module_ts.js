@@ -27,6 +27,7 @@ let DiceComponent = class DiceComponent {
   constructor(calculationService) {
     this.calculationService = calculationService;
     this.diceRolled = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
+    this.rollStarted = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.EventEmitter();
     this.canClick = true;
     this.value = 1;
     this.imageValue = 'dice1';
@@ -63,6 +64,8 @@ let DiceComponent = class DiceComponent {
     var _this = this;
 
     return (0,C_Users_Jeremy_SideProjects_campaign_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this.rollStarted.emit(true);
+
       _this.canClick = false;
 
       _this.rollDice();
@@ -114,6 +117,9 @@ DiceComponent.ctorParameters = () => [{
 
 DiceComponent.propDecorators = {
   diceRolled: [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Output
+  }],
+  rollStarted: [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Output
   }],
   canClick: [{
@@ -257,6 +263,62 @@ let TextService = class TextService {
                 politicanInvolved: 'William Henry Harrison',
                 yearInvolved: '1840',
                 normalEvent: true,
+                statesInvolved: [],
+            },
+            {
+                title: 'Scandal',
+                description: 'Your campaign manager is arrested',
+                points: -2,
+                imageSrc: '',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: true,
+                statesInvolved: [],
+            },
+            {
+                title: 'Scandal',
+                description: 'A leak from private fundraising event reveals some bad comments you made',
+                points: -2,
+                imageSrc: '',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: true,
+                statesInvolved: [],
+            },
+            {
+                title: 'Scandal',
+                description: 'An embarrasing photo from college resurfaces',
+                points: -2,
+                imageSrc: '',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: true,
+                statesInvolved: [],
+            },
+            {
+                title: 'Scandal',
+                description: 'Media discovers that you were unfaithful to your spouse',
+                points: -2,
+                imageSrc: '',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: true,
+                statesInvolved: [],
+            },
+            {
+                title: 'Scandal',
+                description: 'A company you are associated with has an embezzlement scandal',
+                points: -2,
+                imageSrc: '',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: true,
+                statesInvolved: [],
             },
         ];
         return results;
@@ -272,6 +334,7 @@ let TextService = class TextService {
                 politicanInvolved: 'George W Bush',
                 yearInvolved: '2000',
                 normalEvent: true,
+                statesInvolved: ['MI', 'PA', 'WI', 'OH', 'IL'],
             },
             {
                 title: 'Gaffe',
@@ -282,16 +345,18 @@ let TextService = class TextService {
                 history: 'During a campaign speech in Oregon, Obama accidently said: "I\'ve now been to 57 states"',
                 politicanInvolved: 'Barack Obama',
                 yearInvolved: '2008',
+                statesInvolved: ['OR', 'ID', 'MT', 'WA', 'UT', 'NV', 'OK'],
             },
             {
                 title: 'Gaffe',
                 description: 'You slip up while making a comparison during a speech',
-                points: -1,
+                points: -2,
                 imageSrc: '/assets/images/presidents/46-joe-biden.png',
                 history: 'During a speech in Iowa, Biden mispoke saying: "Poor kids are just as bright and just as talented as white kids" before immediately correcting himself',
                 politicanInvolved: 'Joe Biden',
                 yearInvolved: '2020',
                 normalEvent: true,
+                statesInvolved: ['TX', 'CA', 'FL', 'PA', 'NC', 'NY', 'IL'],
             },
             {
                 title: 'Gaffe',
@@ -302,6 +367,7 @@ let TextService = class TextService {
                 politicanInvolved: 'George W Bush',
                 yearInvolved: '2004',
                 normalEvent: true,
+                statesInvolved: ['TX', 'CA', 'FL', 'PA', 'NC', 'NY', 'IL'],
             },
         ];
         return results;
@@ -317,6 +383,7 @@ let TextService = class TextService {
                 politicanInvolved: '',
                 yearInvolved: '',
                 normalEvent: false,
+                statesInvolved: [],
             },
             {
                 title: 'Boon',
@@ -327,6 +394,7 @@ let TextService = class TextService {
                 politicanInvolved: '',
                 yearInvolved: '',
                 normalEvent: false,
+                statesInvolved: [],
             },
             {
                 title: 'Boon',
@@ -337,7 +405,57 @@ let TextService = class TextService {
                 politicanInvolved: '',
                 yearInvolved: '',
                 normalEvent: false,
+                statesInvolved: [],
             },
+        ];
+        return results;
+    }
+    getNeutralizationEvents() {
+        const results = [
+            {
+                title: 'Neutralization',
+                description: 'Republican Stronghold North Dakota has become a swing state',
+                points: 0,
+                imageSrc: '/assets/images/presidents/44-obama.jpg',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: false,
+                statesInvolved: ['ND'],
+            },
+            {
+                title: 'Neutralization',
+                description: 'Democratic Stronghold Vermont has become a swing state',
+                points: 0,
+                imageSrc: '/assets/images/presidents/44-obama.jpg',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: false,
+                statesInvolved: ['VT'],
+            },
+            {
+                title: 'Neutralization',
+                description: 'Republican Stronghold Tennessee has become a swing state',
+                points: 0,
+                imageSrc: '/assets/images/presidents/44-obama.jpg',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: false,
+                statesInvolved: ['TN'],
+            },
+            {
+                title: 'Neutralization',
+                description: 'Democratic Stronghold Massachusets has become a swing state',
+                points: 0,
+                imageSrc: '/assets/images/presidents/44-obama.jpg',
+                history: '',
+                politicanInvolved: '',
+                yearInvolved: '',
+                normalEvent: false,
+                statesInvolved: ['MA'],
+            }
         ];
         return results;
     }
@@ -352,26 +470,29 @@ let TextService = class TextService {
                 politicanInvolved: 'Barack Obama',
                 yearInvolved: '2008',
                 normalEvent: true,
+                statesInvolved: [],
             },
             {
                 normalEvent: true,
                 title: 'Endorsement',
                 description: 'You receive a grudgingly given endorsement from your former opponent',
-                points: 1,
+                points: 2,
                 imageSrc: '/assets/images/presidents/44-obama.jpg',
                 history: 'After dropping out of the Democratic Primary, Hillary Clinton gave her endorsement to her former opponent.',
                 politicanInvolved: 'Barack Obama',
                 yearInvolved: '2008',
+                statesInvolved: ['NY', 'IN'],
             },
             {
                 normalEvent: true,
                 title: 'Endorsement',
                 description: 'You have been endorsed by famous actor, George Clooney',
-                points: 2,
+                points: 3,
                 imageSrc: '/assets/images/presidents/44-obama.jpg',
                 history: 'During an interview with "Good Morning America", Clooney praised the president-to-be and offered an endorsement.',
                 politicanInvolved: 'Barack Obama',
                 yearInvolved: '2008',
+                statesInvolved: ['CA', 'FL'],
             },
             {
                 normalEvent: true,
@@ -382,6 +503,7 @@ let TextService = class TextService {
                 history: 'This was a big endorsement coming after referendums in Kansas and Ohio on reproductive rights',
                 politicanInvolved: 'Joe Biden',
                 yearInvolved: '2024',
+                statesInvolved: ['KS', 'OH'],
             },
             {
                 title: 'Endorsement',
@@ -392,6 +514,7 @@ let TextService = class TextService {
                 politicanInvolved: 'Donald Trump',
                 yearInvolved: '2016',
                 normalEvent: true,
+                statesInvolved: ['TX', 'MI', 'GA', 'ID', 'MT'],
             },
             {
                 title: 'Endorsement',
@@ -402,6 +525,7 @@ let TextService = class TextService {
                 politicanInvolved: 'Joe Biden',
                 yearInvolved: '2024',
                 normalEvent: true,
+                statesInvolved: ['DE', 'CT', 'NM'],
             },
             {
                 title: 'Endorsement',
@@ -412,16 +536,18 @@ let TextService = class TextService {
                 politicanInvolved: 'Hillary Clinton',
                 yearInvolved: '2016',
                 normalEvent: true,
+                statesInvolved: ['VA', 'MD', 'IA'],
             },
             {
                 title: 'Endorsement',
                 description: 'You are endorsed by a former president!',
-                points: 2,
+                points: 1,
                 imageSrc: '/assets/images/presidents/43-bush.jpg',
                 history: 'He was endorsed by his father, George H W Bush, who had held office 8 years earlier',
                 politicanInvolved: 'George W Bush',
                 yearInvolved: '2000',
                 normalEvent: true,
+                statesInvolved: [],
             },
             {
                 title: 'Endorsement',
@@ -432,26 +558,210 @@ let TextService = class TextService {
                 politicanInvolved: 'Jimmy Carter',
                 yearInvolved: '1976',
                 normalEvent: true,
+                statesInvolved: ['ME', 'MT', 'NE', 'SC', 'UT'],
             },
             {
                 title: 'Endorsement',
-                description: 'You have been endorsed by the governor of a key state',
+                description: 'You have been endorsed by the governor of Ohio',
+                points: 2,
+                imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
+                history: 'FDR was endorsed early on by the Governor of California, Hiran Johnson',
+                politicanInvolved: 'Franklin D Roosevelt',
+                yearInvolved: '1932',
+                normalEvent: true,
+                statesInvolved: ['OH'],
+            },
+            {
+                title: 'Endorsement',
+                description: 'You have been endorsed by the governor of Florida',
+                points: 2,
+                imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
+                history: 'FDR was endorsed early on by the Governor of California, Hiran Johnson',
+                politicanInvolved: 'Franklin D Roosevelt',
+                yearInvolved: '1932',
+                normalEvent: true,
+                statesInvolved: ['FL'],
+            },
+            {
+                title: 'Endorsement',
+                description: 'You have been endorsed by the governor of North Carolina',
+                points: 2,
+                imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
+                history: 'FDR was endorsed early on by the Governor of California, Hiran Johnson',
+                politicanInvolved: 'Franklin D Roosevelt',
+                yearInvolved: '1932',
+                normalEvent: true,
+                statesInvolved: ['NC'],
+            },
+            {
+                title: 'Endorsement',
+                description: 'You have been endorsed by the governor of Arizona',
                 points: 1,
                 imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
                 history: 'FDR was endorsed early on by the Governor of California, Hiran Johnson',
                 politicanInvolved: 'Franklin D Roosevelt',
                 yearInvolved: '1932',
                 normalEvent: true,
+                statesInvolved: ['AZ'],
             },
             {
                 title: 'Endorsement',
                 description: 'You have been endorsed by a former vice president',
-                points: 2,
+                points: 1,
                 imageSrc: '/assets/images/presidents/43-bush.jpg',
                 history: 'Former Vice President Dan Quayle gave his endorsement to this member of his party',
                 politicanInvolved: 'George W Bush',
                 yearInvolved: '2000',
                 normalEvent: true,
+                statesInvolved: ['CA', 'OR', 'WA', 'PA', 'NC', 'TN', 'WI'],
+            },
+        ];
+        return results;
+    }
+    getSuperPacEvents() {
+        const results = [
+            {
+                title: 'Super Pac',
+                description: 'A super pac ran ads for you in Michigan and Illinois',
+                points: 3,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['MI', 'IL']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in Georgia and Mississippi',
+                points: -3,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['MS', 'GA']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in the South West',
+                points: -2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['NM', 'AZ', 'TX', 'NV']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in the South West',
+                points: 2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['NM', 'AZ', 'TX', 'NV']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in Maine and New Hampshire',
+                points: 3,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['ME', 'NH']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in Maine and New Hampshire',
+                points: -2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['ME', 'NH']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in Oregon and Washington',
+                points: -4,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['MI', 'IL']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in the Carolinas',
+                points: 2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['SC', 'NC']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in Hawaii and Alaska',
+                points: 2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['HI', 'AK']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in Hawaii and Alaska',
+                points: -2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['HI', 'AK']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in Wisconsin and Minnesota',
+                points: 2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['WI', 'MN']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for your opponent in Wisconsin and Minnesota',
+                points: -3,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['WI', 'MN']
+            },
+            {
+                title: 'Super Pac/Donation',
+                description: 'A super pac ran ads for you in Missouri, Arkansas and Louisianna',
+                points: 2,
+                imageSrc: '/assets/images/presidents/campaign.png',
+                normalEvent: false,
+                history: 'Super Pacs affect elections with money',
+                politicanInvolved: '',
+                yearInvolved: '',
+                statesInvolved: ['MO', 'AR', 'LA']
             },
         ];
         return results;
@@ -461,32 +771,68 @@ let TextService = class TextService {
             {
                 title: 'Media Tour',
                 description: 'You receive some free press as the media spends time covering your story',
-                points: 2,
+                points: 1,
                 imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
                 history: 'FDR was the first president to appear on TV during the 1939 World\'s Fair',
                 politicanInvolved: 'Franklin D Roosevelt',
                 yearInvolved: '1940',
-                normalEvent: true,
+                normalEvent: false,
+                statesInvolved: [],
             },
             {
                 title: 'Media Tour',
                 description: 'You receive some free press as the media spends time covering your story',
-                points: 2,
+                points: 1,
                 imageSrc: '/assets/images/presidents/29-harding.jpg',
                 history: 'He was the first president to talk over the radio, giving a speech at the dedication of the Lincoln monument',
                 politicanInvolved: 'Warren G Harding',
                 yearInvolved: '1920',
-                normalEvent: true,
+                normalEvent: false,
+                statesInvolved: [],
             },
             {
                 title: 'Media Tour',
                 description: 'You receive some free press as the media spends time covering your story',
-                points: 2,
+                points: 1,
                 imageSrc: '/assets/images/presidents/42-clinton.jpg',
                 history: 'Bill Clinton was the president when the White House built their first website',
                 politicanInvolved: 'Bill Clinton',
                 yearInvolved: '1996',
-                normalEvent: true,
+                normalEvent: false,
+                statesInvolved: [],
+            },
+            {
+                title: 'Media Tour',
+                description: 'You receive some negative press as the media spends time covering your story',
+                points: -1,
+                imageSrc: '/assets/images/presidents/32-roosevelt.jpg',
+                history: 'FDR was the first president to appear on TV during the 1939 World\'s Fair',
+                politicanInvolved: 'Franklin D Roosevelt',
+                yearInvolved: '1940',
+                normalEvent: false,
+                statesInvolved: [],
+            },
+            {
+                title: 'Media Tour',
+                description: 'You receive some negative press as the media spends time covering your story',
+                points: -1,
+                imageSrc: '/assets/images/presidents/29-harding.jpg',
+                history: 'He was the first president to talk over the radio, giving a speech at the dedication of the Lincoln monument',
+                politicanInvolved: 'Warren G Harding',
+                yearInvolved: '1920',
+                normalEvent: false,
+                statesInvolved: [],
+            },
+            {
+                title: 'Media Tour',
+                description: 'You receive some negative press as the media spends time covering your story',
+                points: -1,
+                imageSrc: '/assets/images/presidents/42-clinton.jpg',
+                history: 'Bill Clinton was the president when the White House built their first website',
+                politicanInvolved: 'Bill Clinton',
+                yearInvolved: '1996',
+                normalEvent: false,
+                statesInvolved: [],
             }
         ];
         return results;
@@ -496,12 +842,57 @@ let TextService = class TextService {
             {
                 title: 'Hot Button Issue',
                 description: 'Border Security',
-                points: 1,
+                points: -1,
                 imageSrc: '/assets/images/presidents/43-bush.jpg',
-                history: 'I am not sure how to handle Hot Button issues yet... This is a TEST',
-                politicanInvolved: 'George Bush',
+                history: 'Your position on Border Security is not popular in border states',
+                politicanInvolved: '',
                 yearInvolved: '2004',
-                normalEvent: true,
+                normalEvent: false,
+                statesInvolved: ['CA', 'AZ', 'NM', 'TX'],
+            },
+            {
+                title: 'Hot Button Issue',
+                description: 'Hurricane Releif',
+                points: -2,
+                imageSrc: '/assets/images/presidents/43-bush.jpg',
+                history: 'Your position on Hurricane Releif is not well received by southern states',
+                politicanInvolved: '',
+                yearInvolved: '2004',
+                normalEvent: false,
+                statesInvolved: ['CA', 'AZ', 'NM', 'TX'],
+            },
+            {
+                title: 'Hot Button Issue',
+                description: 'Hurricane Releif',
+                points: 2,
+                imageSrc: '/assets/images/presidents/43-bush.jpg',
+                history: 'Your position on Hurricane Releif is very popular in southern states',
+                politicanInvolved: '',
+                yearInvolved: '2004',
+                normalEvent: false,
+                statesInvolved: ['CA', 'AZ', 'NM', 'TX'],
+            },
+            {
+                title: 'Hot Button Issue',
+                description: 'Car Company Bailout',
+                points: -2,
+                imageSrc: '/assets/images/presidents/43-bush.jpg',
+                history: 'Your position on Car Company Bailout is not well received by midwest states',
+                politicanInvolved: '',
+                yearInvolved: '2004',
+                normalEvent: false,
+                statesInvolved: ['MI', 'WI', 'PA'],
+            },
+            {
+                title: 'Hot Button Issue',
+                description: 'Car Company Bailout',
+                points: 2,
+                imageSrc: '/assets/images/presidents/43-bush.jpg',
+                history: 'Your position on Car Company Bailout is very popular in midwest states',
+                politicanInvolved: '',
+                yearInvolved: '2004',
+                normalEvent: false,
+                statesInvolved: ['MI', 'WI', 'PA'],
             },
         ];
         return results;
@@ -513,14 +904,15 @@ let TextService = class TextService {
     getEvents() {
         const results = [
             {
-                title: 'Endorsement',
-                description: '',
-                points: 0,
-                imageSrc: '',
-                history: '',
+                title: 'Hot Button Issue',
+                description: 'Car Company Bailout',
+                points: 2,
+                imageSrc: '/assets/images/presidents/43-bush.jpg',
+                history: 'Your position on Car Company Bailout is very popular in midwest states',
                 politicanInvolved: '',
-                yearInvolved: '',
-                normalEvent: true,
+                yearInvolved: '2004',
+                normalEvent: false,
+                statesInvolved: ['MI', 'WI', 'PA'],
             },
             // {
             //   title:'Hot Button Issue',
@@ -719,6 +1111,10 @@ let AdvertisePage = class AdvertisePage {
     }
   }
 
+  rollStarted() {
+    this.canBack = false;
+  }
+
   handleRoll(roll) {
     var _this = this;
 
@@ -853,43 +1249,32 @@ let CampaignPage = class CampaignPage {
     this.states = this.votes.getSortedStates();
   }
 
+  rollStarted() {
+    this.canBack = false;
+  }
+
   handleRoll(roll) {
     var _this = this;
 
     return (0,C_Users_Jeremy_SideProjects_campaign_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      _this.canBack = false; //TODO3
+      //this.canBack = false;
+      //TODO3
+      let modifier = 0;
+      let stateId = _this.chosenState;
 
-      const stateId = _this.chosenState.split(',')[0];
+      if (_this.chosenState[0] === '*') {
+        modifier = -1;
+        stateId = _this.chosenState.slice(1);
+      }
 
-      const stateModifier = _this.chosenState.split(',')[1];
-
+      console.log(stateId);
       const originalRoll = roll;
-      roll = Math.floor(roll / 2);
+      roll = Math.floor(roll / 2) + modifier;
 
       if (_this.chosenState) {
         if (_this.isDemocrat) {
-          if (stateModifier === '1') {
-            roll -= 1;
-          } else if (stateModifier === '2') {
-            roll -= 2;
-          }
-
-          if (roll < 0) {
-            roll = 0;
-          }
-
           _this.votes.changeStateClimate(stateId, roll, 0);
         } else {
-          if (stateModifier === '3') {
-            roll -= 1;
-          } else if (stateModifier === '4') {
-            roll -= 2;
-          }
-
-          if (roll < 0) {
-            roll = 0;
-          }
-
           _this.votes.changeStateClimate(stateId, 0, roll);
         } //TODO3 this number need
 
@@ -993,11 +1378,13 @@ let EventPage = class EventPage {
     this.allEvents = this.textService.getEvents();
     this.scandalEvents = this.textService.getScandalEvents();
     this.gaffeEvents = this.textService.getGaffeEvents();
+    this.neutralizeEvents = this.textService.getNeutralizationEvents();
     this.boonEvents = this.textService.getBoonEvents();
     this.endorsementEvents = this.textService.getEndorsementEvents();
     this.hotButtonEvents = this.textService.getHotButtonEvents();
     this.endingEvents = this.textService.getEndingEvents();
     this.mediaTourEvents = this.textService.getMediaTourEvents();
+    this.superPacEvents = this.textService.getSuperPacEvents();
     this.currentEvent = this.getCurrentEvent(); //this.currentEvent = this.allEvents[this.currentIndex];
     //const isDebate = (this.currentIndex === 3 || this.currentIndex === 6 || this.currentIndex === 8);
     // if (this.votes.NationalClimate > 3 && !isDebate) {
@@ -1021,7 +1408,23 @@ let EventPage = class EventPage {
     this.eventYear = this.currentEvent.yearInvolved;
     this.eventPersonInvolved = this.currentEvent.politicanInvolved;
     this.eventPoints = this.currentEvent.points;
-    this.normalEvent = this.currentEvent.normalEvent; //console.log(this.currentIndex);
+    this.normalEvent = this.currentEvent.normalEvent;
+    this.statesInvolved = this.currentEvent.statesInvolved;
+    this.statesInvolvedString = '';
+
+    if (this.statesInvolved.length === 1) {
+      this.statesInvolvedString = ' ' + this.statesInvolved[0];
+    } else {
+      for (const state of this.statesInvolved) {
+        this.statesInvolvedString += ' ';
+        this.statesInvolvedString += state;
+        this.statesInvolvedString += ',';
+      }
+
+      this.statesInvolvedString = this.statesInvolvedString.substring(0, this.statesInvolvedString.length - 1);
+      this.statesInvolvedString = this.statesInvolvedString.slice(0, this.statesInvolvedString.length - 3) + ' and' + this.statesInvolvedString.slice(this.statesInvolvedString.length - 3);
+    } //console.log(this.currentIndex);
+
 
     console.log(this.currentEvent);
   }
@@ -1029,30 +1432,35 @@ let EventPage = class EventPage {
   getCurrentEvent() {
     // return this.endorsementEvents[Math.floor(Math.random() * this.endorsementEvents.length)];
     const currentEventType = this.getCurrentEventType();
+    console.log(currentEventType);
 
     if (currentEventType === 'superPac') {
+      return this.superPacEvents[Math.floor(Math.random() * this.endorsementEvents.length)];
       return {
         title: 'Super Pac/Donation',
-        description: 'You received a donation from a super pac',
-        points: 1,
+        description: 'A super pac ran ads for you in Michigan and Illinois',
+        points: 2,
         imageSrc: '/assets/images/presidents/campaign.png',
         normalEvent: false,
         history: 'Super Pacs affect elections with money',
         politicanInvolved: 'a',
-        yearInvolved: 'a'
+        yearInvolved: 'a',
+        statesInvolved: ['MI', 'IL']
       };
     } else if (currentEventType === 'endorsement') {
       return this.endorsementEvents[Math.floor(Math.random() * this.endorsementEvents.length)];
     } else if (currentEventType === 'boon') {
       return this.boonEvents[Math.floor(Math.random() * this.boonEvents.length)];
     } else if (currentEventType === 'mediaTour') {
-      return this.mediaTourEvents[Math.floor(Math.random() * this.endorsementEvents.length)];
+      return this.mediaTourEvents[Math.floor(Math.random() * this.mediaTourEvents.length)];
     } else if (currentEventType === 'hotButton') {
       return this.hotButtonEvents[Math.floor(Math.random() * this.hotButtonEvents.length)];
     } else if (currentEventType === 'gaffe') {
       return this.gaffeEvents[Math.floor(Math.random() * this.gaffeEvents.length)];
     } else if (currentEventType === 'scandal') {
       return this.scandalEvents[Math.floor(Math.random() * this.scandalEvents.length)];
+    } else if (currentEventType === 'neutralize') {
+      return this.neutralizeEvents[Math.floor(Math.random() * this.neutralizeEvents.length)];
     } else {
       return this.allEvents[0];
     }
@@ -1077,28 +1485,22 @@ let EventPage = class EventPage {
     } //Current total 120 lol but not finished TODO jermy
 
 
-    if (draw > 85) {
+    if (draw > 98) {
+      return 'neutralize';
+    } else if (draw > 85) {
       //Base 15%
       return 'mediaTour'; //1 or 2 no impact... 3/4 +1 to each state. +2 to each state.
-    }
-
-    if (draw > 65 && draw < 86) {
+    } else if (draw > 65) {
       //Base 20%
       return 'endorsement'; //Big national (that they ran ads in a region)
-    }
-
-    if (draw > 50 && draw < 64) {
+    } else if (draw > 50) {
       //Base 10%
       return 'superPac'; //Gain or lose but only in swing states (anything currently within 3 points)
-    }
-
-    if (draw > 28 && draw < 49) {
+    } else if (draw > 20) {
       //Base 15%
       return 'hotButton'; //Specific place, a Bridge collapses and people talk about it... i.e. event draws event to an issue.
       //Free point if you agree, or risk it to see if you lose or not (button to accept or decline) John Kerry
-    }
-
-    if (draw > 8 && draw < 27) {
+    } else if (draw > 6) {
       //Base 11%
       return 'gaffe'; //loose a point, 2, or 3
     } else {
@@ -1107,14 +1509,26 @@ let EventPage = class EventPage {
     }
   }
 
-  handleRoll(roll) {
+  handleRoll(roll, states) {
     var _this = this;
 
     return (0,C_Users_Jeremy_SideProjects_campaign_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (_this.isDemocrat) {
-        _this.votes.changeNationalClimate(roll / 2, -roll / 2);
+      if (roll === 0 && _this.currentEvent.title === 'Neutralization') {
+        _this.votes.neutralizeStateClimate(states[0]);
+      } else if (states.length === 0) {
+        if (_this.isDemocrat) {
+          _this.votes.changeNationalClimate(roll / 2, -roll / 2);
+        } else {
+          _this.votes.changeNationalClimate(-roll / 2, roll / 2);
+        }
       } else {
-        _this.votes.changeNationalClimate(-roll / 2, roll / 2);
+        for (const state of states) {
+          if (_this.isDemocrat) {
+            _this.votes.changeStateClimate(state, roll / 2, -roll / 2);
+          } else {
+            _this.votes.changeStateClimate(state, -roll / 2, roll / 2);
+          }
+        }
       } // if (roll === 1) {
       //   if (this.currentEvent.rollMap[0] > 0 && this.isDemocrat ) {
       //     this.votes.changeNationalClimate(this.currentEvent.rollMap[0]/2, -this.currentEvent.rollMap[0]/2);
@@ -1359,6 +1773,10 @@ let FundraisePage = class FundraisePage {
     this.canBack = true;
   }
 
+  rollStarted() {
+    this.canBack = false;
+  }
+
   handleRoll(rollValue) {
     var _this = this;
 
@@ -1458,8 +1876,10 @@ let OpponentPage = class OpponentPage {
         this.textService = textService;
         this.actionText = '';
         this.actionId = 0;
+        this.actionIcons = [];
     }
     ngOnInit() {
+        console.log("ngOnInit");
         this.actionText = this.getNextOpponentAction();
     }
     getAllActions() {
@@ -1473,8 +1893,30 @@ let OpponentPage = class OpponentPage {
         //5 - advertise wisely (draw the top 10 closest states and pick one's group)
         const value = Math.floor(Math.random() * 6) + 1;
         if (value <= 2) {
-            this.votes.opponentFunds += 1;
-            return 'Your opponent ran fundraising and earned $10 million';
+            if (this.votes.opponentFunds < 3) {
+                this.votes.opponentFunds += 1;
+                return 'Your opponent ran fundraising and earned $10 million';
+            }
+            else {
+                this.votes.opponentFunds -= 1;
+                const statePos = Math.floor(Math.random() * 3);
+                const group = this.votes.getSortedGroups(statePos);
+                let statesString = '';
+                if (group.length === 1) {
+                    statesString = ' ' + group[0];
+                }
+                else {
+                    for (const state of group) {
+                        statesString += ' ';
+                        statesString += state;
+                        statesString += ',';
+                    }
+                    statesString = statesString.substring(0, statesString.length - 1);
+                    statesString = statesString.slice(0, statesString.length - 3) + ' and' + statesString.slice(statesString.length - 3);
+                }
+                this.handleGroupScoreUpdate(group, 1);
+                return 'Your opponent ran advertising in' + statesString + ' where they made a difference of 1 point';
+            }
             //fundraise
         }
         else if (value <= 4) {
@@ -1506,11 +1948,27 @@ let OpponentPage = class OpponentPage {
         }
         else {
             //campaign (draw the top 6 closest states and pick one)
-            const statePos = Math.floor(Math.random() * 6);
-            const states = this.votes.getSortedStates(6);
+            const statePos = Math.floor(Math.random() * 7);
+            const states = this.votes.getSortedStates(7);
             this.handleGroupScoreUpdate([states[statePos].abbreviation], 2);
             return 'Your opponent campaigned in ' + states[statePos].name + ' where they made a difference of 2 points';
         }
+    }
+    // addActionIconByName(state: string, change: number, isTowardBlue: boolean) {
+    //   const iconPath = this.votes.getStateIconByName(state);
+    //   this.actionIcons.push({
+    //     path: iconPath,
+    //     change,
+    //     isTowardBlue
+    //   });
+    // }
+    addActionIconByAbrev(abbreviation, change, isTowardBlue) {
+        const iconPath = this.votes.getStateIconByAbrev(abbreviation);
+        this.actionIcons.push({
+            path: 'assets/images/states/' + iconPath,
+            change,
+            isTowardBlue
+        });
     }
     goToResults() {
         this.router.navigateByUrl('/tabs/tab1/results');
@@ -1544,118 +2002,18 @@ let OpponentPage = class OpponentPage {
         }
     }
     handleGroupScoreUpdate(group, sway) {
+        this.actionIcons = [];
         if (this.votes.getUserIsDem()) {
             for (const state of group) {
+                this.addActionIconByAbrev(state, sway, false);
                 this.votes.changeStateClimate(state, -sway / 2, sway / 2);
             }
         }
         else {
             for (const state of group) {
+                this.addActionIconByAbrev(state, sway, true);
                 this.votes.changeStateClimate(state, sway / 2, -sway / 2);
             }
-        }
-    }
-    dummyAI() {
-        if (this.votes.turn === 1) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('FL', 0, 2);
-            }
-            else {
-                this.votes.changeStateClimate('FL', 2, 0);
-            }
-            //fl+2
-        }
-        else if (this.votes.turn === 4) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('TX', 0, 2);
-            }
-            else {
-                this.votes.changeStateClimate('TX', 2, 0);
-            }
-            //tx+2
-        }
-        else if (this.votes.turn === 5) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('NC', 0, 3);
-            }
-            else {
-                this.votes.changeStateClimate('NC', 3, 0);
-            }
-        }
-        else if (this.votes.turn === 7) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('WI', 0, 1);
-                this.votes.changeStateClimate('IA', 0, 0);
-                this.votes.changeStateClimate('MI', 0, 1);
-                this.votes.changeStateClimate('OH', 0, 1);
-            }
-            else {
-                this.votes.changeStateClimate('WI', 1, 0);
-                this.votes.changeStateClimate('IA', 1, 0);
-                this.votes.changeStateClimate('MI', 1, 0);
-                this.votes.changeStateClimate('OH', 1, 0);
-            }
-            //wi,ia,mi,oh 1
-        }
-        else if (this.votes.turn === 8) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('GA', 0, 2);
-            }
-            else {
-                this.votes.changeStateClimate('GA', 2, 0);
-            }
-            //ga 2
-        }
-        else if (this.votes.turn === 10) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('NM', 0, 1);
-                this.votes.changeStateClimate('CO', 0, 1);
-                this.votes.changeStateClimate('NV', 0, 1);
-                this.votes.changeStateClimate('AZ', 0, 1);
-            }
-            else {
-                this.votes.changeStateClimate('NM', 1, 0);
-                this.votes.changeStateClimate('CO', 1, 0);
-                this.votes.changeStateClimate('NV', 1, 0);
-                this.votes.changeStateClimate('AZ', 1, 0);
-            }
-            //nm, co nv az 1
-        }
-        else if (this.votes.turn === 11) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('IL', 0, 2);
-            }
-            else {
-                this.votes.changeStateClimate('IL', 2, 0);
-            }
-            //il 2
-        }
-        else if (this.votes.turn === 14) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('MO', 0, 1);
-            }
-            else {
-                this.votes.changeStateClimate('MO', 1, 0);
-            }
-            //mo 1
-        }
-        else if (this.votes.turn === 16) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('TX', 0, 1);
-            }
-            else {
-                this.votes.changeStateClimate('TX', 1, 0);
-            }
-            //tx 1
-        }
-        else if (this.votes.turn === 18) {
-            if (this.votes.getUserIsDem()) {
-                this.votes.changeStateClimate('CA', 0, 1);
-            }
-            else {
-                this.votes.changeStateClimate('CA', 1, 0);
-            }
-            //ca 1
         }
     }
 };
@@ -1938,7 +2296,6 @@ let Tab1Page = class Tab1Page {
 
     this.isThird = this.votes.getUserIsThird();
     this.isDemocrat = this.votes.getUserIsDem();
-    console.log(this.partyName);
   }
 
   ngAfterViewInit() {
@@ -2051,7 +2408,7 @@ module.exports = "input[type='radio'][name='buttonGroup'] { display:none; }\r\nl
   \*****************************************************************/
 /***/ ((module) => {
 
-module.exports = "/* ion-content{\r\n   --background: #fff url(\"../../../assets/images/rally.png\") no-repeat center center / cover;\r\n} */\r\n/*\r\np {\r\n  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n  color: #000;\r\n} */\r\n/* h1 {\r\n  color: #000;\r\n  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;\r\n}\r\n\r\nh3 {\r\n  color: #000;\r\n  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;\r\n} */\r\n.center {\r\n  font-size: large;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  left: 50%\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhbXBhaWduLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFDSDs7OztHQUlHO0FBRUg7Ozs7Ozs7O0dBUUc7QUFFSDtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkI7QUFDRiIsImZpbGUiOiJjYW1wYWlnbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogaW9uLWNvbnRlbnR7XHJcbiAgIC0tYmFja2dyb3VuZDogI2ZmZiB1cmwoXCIuLi8uLi8uLi9hc3NldHMvaW1hZ2VzL3JhbGx5LnBuZ1wiKSBuby1yZXBlYXQgY2VudGVyIGNlbnRlciAvIGNvdmVyO1xyXG59ICovXHJcbi8qXHJcbnAge1xyXG4gIGZvbnQtZmFtaWx5OiAnRnJhbmtsaW4gR290aGljIE1lZGl1bScsICdBcmlhbCBOYXJyb3cnLCBBcmlhbCwgc2Fucy1zZXJpZjtcclxuICBjb2xvcjogIzAwMDtcclxufSAqL1xyXG5cclxuLyogaDEge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG4gIHRleHQtc2hhZG93OiAxcHggMCAwICNmZmYsIDAgLTFweCAwICNmZmYsIDAgMXB4IDAgI2ZmZiwgLTFweCAwIDAgI2ZmZjtcclxufVxyXG5cclxuaDMge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG4gIHRleHQtc2hhZG93OiAxcHggMCAwICNmZmYsIDAgLTFweCAwICNmZmYsIDAgMXB4IDAgI2ZmZiwgLTFweCAwIDAgI2ZmZjtcclxufSAqL1xyXG5cclxuLmNlbnRlciB7XHJcbiAgZm9udC1zaXplOiBsYXJnZTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGxlZnQ6IDUwJVxyXG59XHJcblxyXG4iXX0= */";
+module.exports = "/* ion-content{\r\n   --background: #fff url(\"../../../assets/images/rally.png\") no-repeat center center / cover;\r\n} */\r\n/*\r\np {\r\n  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\r\n  color: #000;\r\n} */\r\n/* h1 {\r\n  color: #000;\r\n  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;\r\n}\r\n\r\nh3 {\r\n  color: #000;\r\n  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;\r\n} */\r\np {\r\n  margin-top: 2px;\r\n  margin-bottom: 2px;\r\n}\r\n.center {\r\n  font-size: large;\r\n  text-align: center;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  left: 50%\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhbXBhaWduLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFDSDs7OztHQUlHO0FBRUg7Ozs7Ozs7O0dBUUc7QUFFSDtFQUNFLGVBQWU7RUFDZixrQkFBa0I7QUFDcEI7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkI7QUFDRiIsImZpbGUiOiJjYW1wYWlnbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogaW9uLWNvbnRlbnR7XHJcbiAgIC0tYmFja2dyb3VuZDogI2ZmZiB1cmwoXCIuLi8uLi8uLi9hc3NldHMvaW1hZ2VzL3JhbGx5LnBuZ1wiKSBuby1yZXBlYXQgY2VudGVyIGNlbnRlciAvIGNvdmVyO1xyXG59ICovXHJcbi8qXHJcbnAge1xyXG4gIGZvbnQtZmFtaWx5OiAnRnJhbmtsaW4gR290aGljIE1lZGl1bScsICdBcmlhbCBOYXJyb3cnLCBBcmlhbCwgc2Fucy1zZXJpZjtcclxuICBjb2xvcjogIzAwMDtcclxufSAqL1xyXG5cclxuLyogaDEge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG4gIHRleHQtc2hhZG93OiAxcHggMCAwICNmZmYsIDAgLTFweCAwICNmZmYsIDAgMXB4IDAgI2ZmZiwgLTFweCAwIDAgI2ZmZjtcclxufVxyXG5cclxuaDMge1xyXG4gIGNvbG9yOiAjMDAwO1xyXG4gIHRleHQtc2hhZG93OiAxcHggMCAwICNmZmYsIDAgLTFweCAwICNmZmYsIDAgMXB4IDAgI2ZmZiwgLTFweCAwIDAgI2ZmZjtcclxufSAqL1xyXG5cclxucCB7XHJcbiAgbWFyZ2luLXRvcDogMnB4O1xyXG4gIG1hcmdpbi1ib3R0b206IDJweDtcclxufVxyXG5cclxuLmNlbnRlciB7XHJcbiAgZm9udC1zaXplOiBsYXJnZTtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGxlZnQ6IDUwJVxyXG59XHJcblxyXG4iXX0= */";
 
 /***/ }),
 
@@ -2131,7 +2488,7 @@ module.exports = "<div class=\"center\">\r\n  <img class=\"dice\" src='assets/{{
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\r\n<h1>Advertise</h1>\r\n</div>\r\n<div class=\"center\">\r\n<h3>Choose a block of states to advertise to:</h3>\r\n</div>\r\n\r\n<!-- Have an icon for each of the state blocks -->\r\n<div class=\"row\">\r\n  <div [formGroup]=\"myGroup\">\r\n    <div class=\"column left\">\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"one\" id=\"one\"><label for=\"one\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/HI-Hawaii.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/CA-California.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/WA-Washington.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/OR-Oregon.png\">\r\n      <br>\r\n      HI, CA, WA, OR</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"two\" id=\"two\"><label for=\"two\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IL-Illinois.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MN-Minnesota.png\">\r\n      <br>\r\n      IL, MN</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"three\" id=\"three\"><label for=\"three\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NM-New-Mexico.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/CO-Colorado.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NV-Nevada.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/AZ-Arizona.png\">\r\n      <br>\r\n      NM, CO, NV, AZ</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"four\" id=\"four\"><label for=\"four\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/ME-Maine.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NH-New-Hampshire.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/VA-Virginia.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/PA-Pennsylvania.png\">\r\n      <br>\r\n      ME, NH, VA, PA</label>\r\n  </div>\r\n  <div class=\"column right\">\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"five\" id=\"five\"><label for=\"five\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/WI-Wisconsin.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IA-Iowa.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MI-Michigan.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/OH-Ohio.png\">\r\n      <br>\r\n      WI, IA, MI, OH</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"six\" id=\"six\"><label for=\"six\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/FL-Florida.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NC-North-Carolina.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/GA-Georgia.png\">\r\n      <br>\r\n      FL, NC, GA</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"seven\" id=\"seven\"><label for=\"seven\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/TX-Texas.png\">\r\n      <br>\r\n      TX</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"eight\" id=\"eight\"><label for=\"eight\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/SC-South-Carolina.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MO-Missouri.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IN-Indiana.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MT-Montana.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MS-Mississippi.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/AK-Alaska.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/LA-Louisiana.png\">\r\n      <br>\r\n      SC, MO, IN, MT, MS, AK, LA</label>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"center\">\r\n<p>After choosing which block you will advertise to, click 'roll' to see how the area is affected.</p>\r\n</div>\r\n<div class=\"center\">\r\n<app-dice [canClick]=\"diceEnabled\"  (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n</div>\r\n<div class=\"center\">\r\n<p>Rolling a 1 will result in no effect<br>\r\nRolling a 2,3,4 or 5 will result in a +1<br>\r\nRolling a 6 will result in a +2<br></p>\r\n</div>\r\n<div class=\"center\">\r\n<ion-button [disabled]=\"!canBack\" (click)=\"back()\">Back To Options</ion-button>\r\n</div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\r\n<h1>Advertise</h1>\r\n</div>\r\n<div class=\"center\">\r\n<h3>Choose a block of states to advertise to:</h3>\r\n</div>\r\n\r\n<!-- Have an icon for each of the state blocks -->\r\n<div class=\"row\">\r\n  <div [formGroup]=\"myGroup\">\r\n    <div class=\"column left\">\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"one\" id=\"one\"><label for=\"one\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/HI-Hawaii.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/CA-California.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/WA-Washington.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/OR-Oregon.png\">\r\n      <br>\r\n      HI, CA, WA, OR</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"two\" id=\"two\"><label for=\"two\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IL-Illinois.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MN-Minnesota.png\">\r\n      <br>\r\n      IL, MN</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"three\" id=\"three\"><label for=\"three\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NM-New-Mexico.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/CO-Colorado.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NV-Nevada.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/AZ-Arizona.png\">\r\n      <br>\r\n      NM, CO, NV, AZ</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"four\" id=\"four\"><label for=\"four\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/ME-Maine.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NH-New-Hampshire.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/VA-Virginia.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/PA-Pennsylvania.png\">\r\n      <br>\r\n      ME, NH, VA, PA</label>\r\n  </div>\r\n  <div class=\"column right\">\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"five\" id=\"five\"><label for=\"five\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/WI-Wisconsin.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IA-Iowa.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MI-Michigan.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/OH-Ohio.png\">\r\n      <br>\r\n      WI, IA, MI, OH</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"six\" id=\"six\"><label for=\"six\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/FL-Florida.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/NC-North-Carolina.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/GA-Georgia.png\">\r\n      <br>\r\n      FL, NC, GA</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"seven\" id=\"seven\"><label for=\"seven\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/TX-Texas.png\">\r\n      <br>\r\n      TX</label>\r\n    <input (click)=\"enableDice()\" type=\"radio\" name=\"buttonGroup\" formControlName=\"buttonGroup\" value=\"eight\" id=\"eight\"><label for=\"eight\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/SC-South-Carolina.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MO-Missouri.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/IN-Indiana.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MT-Montana.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/MS-Mississippi.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/AK-Alaska.png\">\r\n      <img class=\"state-icon\" src=\"../../../assets/images/states/LA-Louisiana.png\">\r\n      <br>\r\n      SC, MO, IN, MT, MS, AK, LA</label>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"center\">\r\n<p>After choosing which block you will advertise to, click 'roll' to see how the area is affected.</p>\r\n</div>\r\n<div class=\"center\">\r\n<app-dice [canClick]=\"diceEnabled\"  (rollStarted)=\"rollStarted()\"  (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n</div>\r\n<div class=\"center\">\r\n<p>Rolling a 1 will result in no effect<br>\r\nRolling a 2,3,4 or 5 will result in a +1<br>\r\nRolling a 6 will result in a +2<br></p>\r\n</div>\r\n<div class=\"center\">\r\n<ion-button [disabled]=\"!canBack\" (click)=\"back()\">Back To Options</ion-button>\r\n</div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2141,7 +2498,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n<div class=\"center\">\
   \******************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n  <h1>Campaign in a specific state</h1>\r\n  </div>\r\n\r\n\r\n  <ion-list>\r\n    <ion-item>\r\n      <ion-select [(ngModel)]=\"chosenState\" placeholder=\"Choose a state:\">\r\n        <ion-select-option *ngFor=\"let state of states\" [value]=\"state.abbreviation\">{{state.name}} ({{state | scoreDisplay}}) ({{state.college}} votes)</ion-select-option>\r\n\r\n        <!-- <ion-select-option value=\"AL,2\">Alabama (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"AK,1\">Alaska (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"AZ,0\">Arizona</ion-select-option>\r\n        <ion-select-option value=\"AR,2\">Arkansas (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"CA,3\">California (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"CO,0\">Colorado</ion-select-option>\r\n        <ion-select-option value=\"CT,4\">Connecticut (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"DE,4\">Delaware (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"DC,4\">D.C. (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"FL,0\">Florida</ion-select-option>\r\n        <ion-select-option value=\"GA,0\">Georgia</ion-select-option>\r\n        <ion-select-option value=\"HI,3\">Hawaii (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"ID,2\">Idaho (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"IL,3\">Illinois (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"IN,1\">Indiana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"IA,0\">Iowa</ion-select-option>\r\n        <ion-select-option value=\"KS,2\">Kansas (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"KY,2\">Kentucky (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"LA,1\">Louisiana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"ME,0\">Maine</ion-select-option>\r\n        <ion-select-option value=\"MD,4\">Maryland (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MA,4\">Massachusetts (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MI,0\">Michigan</ion-select-option>\r\n        <ion-select-option value=\"MN,3\">Minnesota (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MS,1\">Mississippi (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"MO,1\">Missouri (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"MT,1\">Montana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"NE,2\">Nebraska (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"NV,0\">Nevada</ion-select-option>\r\n        <ion-select-option value=\"NH,0\">New Hampshire</ion-select-option>\r\n        <ion-select-option value=\"NJ,4\">New Jersey (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"NM,0\">New Mexico</ion-select-option>\r\n        <ion-select-option value=\"NY,4\">New York (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"NC,0\">North Carolina</ion-select-option>\r\n        <ion-select-option value=\"ND,2\">North Dakota (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"OH,0\">Ohio</ion-select-option>\r\n        <ion-select-option value=\"OK,2\">Oklahoma (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"OR,3\">Oregon (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"PA,0\">Pennsylvania</ion-select-option>\r\n        <ion-select-option value=\"RI,4\">Rhode Island (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"SC,1\">South Carolina (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"SD,2\">South Dakota (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"TN,2\">Tennessee (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"TX,1\">Texas (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"UT,2\">Utah (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"VT,4\">Vermont (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"VI,0\">Virginia</ion-select-option>\r\n        <ion-select-option value=\"WA,3\">Washington (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"WV,2\">West Virginia (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"WI,0\">Wisconsin</ion-select-option>\r\n        <ion-select-option value=\"WY,2\">Wyoming (+2 Rep)</ion-select-option> -->\r\n      </ion-select>\r\n    </ion-item>\r\n  </ion-list>\r\n  <div class=\"center\">\r\n    <p>You can sway a state by as much as 3 points</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <app-dice [canClick]=\"!!chosenState\" (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n  </div>\r\n  <div class=\"center\">\r\n\r\n  <ion-button [disabled]=\"!canBack\"(click)=\"back()\">Back To Options</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n  <h1>Campaign in a specific state</h1>\r\n  </div>\r\n\r\n\r\n  <ion-list>\r\n    <ion-item>\r\n      <ion-select [(ngModel)]=\"chosenState\" placeholder=\"Choose a state:\">\r\n        <ion-select-option *ngFor=\"let state of states\" [value]=\"state.protected + state.abbreviation\">{{state.protected}}{{state.name}} ({{state | scoreDisplay}}) ({{state.college}} votes)</ion-select-option>\r\n\r\n        <!-- <ion-select-option value=\"AL,2\">Alabama (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"AK,1\">Alaska (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"AZ,0\">Arizona</ion-select-option>\r\n        <ion-select-option value=\"AR,2\">Arkansas (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"CA,3\">California (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"CO,0\">Colorado</ion-select-option>\r\n        <ion-select-option value=\"CT,4\">Connecticut (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"DE,4\">Delaware (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"DC,4\">D.C. (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"FL,0\">Florida</ion-select-option>\r\n        <ion-select-option value=\"GA,0\">Georgia</ion-select-option>\r\n        <ion-select-option value=\"HI,3\">Hawaii (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"ID,2\">Idaho (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"IL,3\">Illinois (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"IN,1\">Indiana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"IA,0\">Iowa</ion-select-option>\r\n        <ion-select-option value=\"KS,2\">Kansas (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"KY,2\">Kentucky (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"LA,1\">Louisiana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"ME,0\">Maine</ion-select-option>\r\n        <ion-select-option value=\"MD,4\">Maryland (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MA,4\">Massachusetts (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MI,0\">Michigan</ion-select-option>\r\n        <ion-select-option value=\"MN,3\">Minnesota (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"MS,1\">Mississippi (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"MO,1\">Missouri (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"MT,1\">Montana (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"NE,2\">Nebraska (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"NV,0\">Nevada</ion-select-option>\r\n        <ion-select-option value=\"NH,0\">New Hampshire</ion-select-option>\r\n        <ion-select-option value=\"NJ,4\">New Jersey (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"NM,0\">New Mexico</ion-select-option>\r\n        <ion-select-option value=\"NY,4\">New York (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"NC,0\">North Carolina</ion-select-option>\r\n        <ion-select-option value=\"ND,2\">North Dakota (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"OH,0\">Ohio</ion-select-option>\r\n        <ion-select-option value=\"OK,2\">Oklahoma (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"OR,3\">Oregon (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"PA,0\">Pennsylvania</ion-select-option>\r\n        <ion-select-option value=\"RI,4\">Rhode Island (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"SC,1\">South Carolina (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"SD,2\">South Dakota (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"TN,2\">Tennessee (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"TX,1\">Texas (+1 Rep)</ion-select-option>\r\n        <ion-select-option value=\"UT,2\">Utah (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"VT,4\">Vermont (+2 Dem)</ion-select-option>\r\n        <ion-select-option value=\"VI,0\">Virginia</ion-select-option>\r\n        <ion-select-option value=\"WA,3\">Washington (+1 Dem)</ion-select-option>\r\n        <ion-select-option value=\"WV,2\">West Virginia (+2 Rep)</ion-select-option>\r\n        <ion-select-option value=\"WI,0\">Wisconsin</ion-select-option>\r\n        <ion-select-option value=\"WY,2\">Wyoming (+2 Rep)</ion-select-option> -->\r\n      </ion-select>\r\n    </ion-item>\r\n  </ion-list>\r\n\r\n  <div class=\"center\">\r\n    <p>Roll 1: +0</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>Roll 2: +1</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>Roll 3: +1</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>Roll 4: +2</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>Roll 5: +2</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>Roll 6: +3</p>\r\n  </div>\r\n  <div class=\"center\">\r\n    <p>(-1 from states marked with a * since they are strongholds for the other party)</p>\r\n  </div>\r\n\r\n  <div class=\"center\">\r\n    <app-dice [canClick]=\"!!chosenState\" (rollStarted)=\"rollStarted()\" (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n  </div>\r\n  <div class=\"center\">\r\n\r\n  <ion-button [disabled]=\"!canBack\"(click)=\"back()\">Back To Options</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2151,7 +2508,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\"
   \************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n\r\n<div class=\"center\">\r\n<p>A Special Event has been triggered!</p>\r\n</div>\r\n<div class=\"center\" style=\"background-color: rgb(192, 182, 224); border-bottom: 2px black solid; border-top: 2px black solid;\">\r\n<h1>{{eventTitle}}</h1>\r\n</div>\r\n<div class=\"center\">\r\n<!-- <p>Before rounds 4,7,10 there will be a debate!  It has rolling rules that effect national climate<br></p> -->\r\n<!-- <p>Debates, Gaffes, scandals, media tour, endorsements, SuperPacs will appear here</p> -->\r\n</div>\r\n<div class=\"center\">\r\n<p>{{eventDescription}}</p>\r\n</div>\r\n<div class=\"center\">\r\n<p *ngIf=\"eventPoints < 0\">This moves the National Climate {{-eventPoints}} points toward your opponent</p>\r\n<p *ngIf=\"eventPoints === 0\">The National Climate is unaffected</p>\r\n<p *ngIf=\"eventPoints > 0\">This moves the National Climate {{eventPoints}} points in your favor</p>\r\n<!-- Or to the right... calculate that on the ts side of this. -->\r\n</div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"handleRoll(eventPoints)\">Next</ion-button>\r\n<!-- <p>{{eventRollsL}}</p>\r\n<p>{{eventRollsR}}</p> -->\r\n</div>\r\n\r\n<div id=\"navcontainer\">\r\n  <ul id=\"navlist\" >\r\n\r\n    <li id=\"active\">Fun Fact</li>\r\n      <div class=\"funfact\">\r\n        <!-- Put this last part in a toast looking box TODO -->\r\n        <p style=\"margin-bottom: 0;\" *ngIf=\"normalEvent\">This event happened to {{eventPersonInvolved}} during the election of {{eventYear}}</p>\r\n        <img [src]=\"eventIcon\" style=\"border-radius: 50%; border: 2px solid black; width:50px; height:50px; padding-top: 0; margin-bottom: 0;\">\r\n        <p style=\"margin-top: 0;\">{{eventHistory}}</p>\r\n        <!-- <app-dice (diceRolled)=\"handleRoll($event)\"></app-dice> -->\r\n      </div>\r\n    </ul>\r\n</div>\r\n\r\n\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n\r\n<div class=\"center\">\r\n<p>A Special Event has been triggered!</p>\r\n</div>\r\n<div class=\"center\" style=\"background-color: rgb(192, 182, 224); border-bottom: 2px black solid; border-top: 2px black solid;\">\r\n<h1>{{eventTitle}}</h1>\r\n</div>\r\n<div class=\"center\">\r\n<!-- <p>Before rounds 4,7,10 there will be a debate!  It has rolling rules that effect national climate<br></p> -->\r\n<!-- <p>Debates, Gaffes, scandals, media tour, endorsements, SuperPacs will appear here</p> -->\r\n</div>\r\n<div class=\"center\">\r\n<p>{{eventDescription}}</p>\r\n</div>\r\n<div class=\"center\" *ngIf=\"statesInvolved.length === 0\">\r\n<p *ngIf=\"eventPoints < 0\">This moves the National Climate {{-eventPoints}} points toward your opponent</p>\r\n<p *ngIf=\"eventPoints === 0\">The National Climate is unaffected</p>\r\n<p *ngIf=\"eventPoints > 0\">This moves the National Climate {{eventPoints}} points in your favor</p>\r\n<!-- Or to the right... calculate that on the ts side of this. -->\r\n</div>\r\n<div class=\"center\" *ngIf=\"statesInvolved.length !== 0\">\r\n  <p *ngIf=\"eventPoints < 0\">This moves the Climate {{-eventPoints}} points toward your opponent in {{statesInvolvedString}}</p>\r\n  <p *ngIf=\"eventPoints === 0\">This state is now polling EVEN for Republican and Democrat</p>\r\n  <p *ngIf=\"eventPoints > 0\">This moves the Climate {{eventPoints}} points in your favor in {{statesInvolvedString}}</p>\r\n  <!-- Or to the right... calculate that on the ts side of this. -->\r\n  </div>\r\n<div class=\"center\">\r\n  <ion-button (click)=\"handleRoll(eventPoints, statesInvolved)\">Next</ion-button>\r\n<!-- <p>{{eventRollsL}}</p>\r\n<p>{{eventRollsR}}</p> -->\r\n</div>\r\n\r\n<div id=\"navcontainer\" *ngIf=\"!!eventPersonInvolved\">\r\n  <ul id=\"navlist\" >\r\n\r\n    <li id=\"active\">Fun Fact</li>\r\n      <div class=\"funfact\">\r\n        <!-- Put this last part in a toast looking box TODO -->\r\n        <p style=\"margin-bottom: 0;\" *ngIf=\"normalEvent\">This event happened to {{eventPersonInvolved}} during the election of {{eventYear}}</p>\r\n        <img [src]=\"eventIcon\" style=\"border-radius: 50%; border: 2px solid black; width:50px; height:50px; padding-top: 0; margin-bottom: 0;\">\r\n        <p style=\"margin-top: 0;\">{{eventHistory}}</p>\r\n        <!-- <app-dice (diceRolled)=\"handleRoll($event)\"></app-dice> -->\r\n      </div>\r\n    </ul>\r\n</div>\r\n\r\n\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2171,7 +2528,7 @@ module.exports = "\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-grid class=\
   \********************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n<div class=\"center\">\r\n  <h3>Fundraising</h3>\r\n</div>\r\n<div class=\"center\">\r\n<p>Roll 1-4: $1 million</p>\r\n</div>\r\n<div class=\"center\">\r\n  <p>Roll 5-6: $2 million</p>\r\n</div>\r\n<div class=\"center\">\r\n<app-dice (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n</div>\r\n<div class=\"center\">\r\n<ion-button [disabled]=\"!canBack\" (click)=\"back()\">Back To Options</ion-button>\r\n</div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n<div class=\"center\">\r\n  <h3>Fundraising</h3>\r\n</div>\r\n<div class=\"center\">\r\n<p>Roll 1-4: $10 million</p>\r\n</div>\r\n<div class=\"center\">\r\n  <p>Roll 5-6: $20 million</p>\r\n</div>\r\n<div class=\"center\">\r\n<app-dice  (rollStarted)=\"rollStarted()\"  (diceRolled)=\"handleRoll($event)\"></app-dice>\r\n</div>\r\n<div class=\"center\">\r\n<ion-button [disabled]=\"!canBack\" (click)=\"back()\">Back To Options</ion-button>\r\n</div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2181,7 +2538,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n<div class=\"center
   \******************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n    <h1>THIS IS WHAT YOUR OPPONENT DID:</h1>\r\n  </div>\r\n  <div class=\"center\">\r\n    <h2>{{actionText}}</h2>\r\n  </div>\r\n  <div class=\"center\">\r\n    <ion-button (click)=\"nextEvent()\">Continue</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <div class=\"center\">\r\n    <h1>THIS IS WHAT YOUR OPPONENT DID:</h1>\r\n  </div>\r\n  <div class=\"center\">\r\n    <h2>{{actionText}}</h2>\r\n  </div>\r\n  <div class=\"center\" *ngFor=\"let state of actionIcons\">\r\n    <img style=\"max-height: 28px;\" [src]='state.path'>\r\n    <h3 *ngIf=\"state.isTowardBlue\" style=\"color:blue\">+ {{state.change}}</h3>\r\n    <h3 *ngIf=\"!state.isTowardBlue\" style=\"color:red\">+ {{state.change}}</h3>\r\n\r\n    <!-- change isTowardBlue -->\r\n  </div>\r\n  <div class=\"center\">\r\n    <ion-button (click)=\"nextEvent()\">Continue</ion-button>\r\n  </div>\r\n</ion-content>\r\n";
 
 /***/ }),
 
@@ -2201,7 +2558,7 @@ module.exports = "<ion-content [fullscreen]=\"true\">\r\n\r\n<div class=\"center
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Round {{votes.round}} out of 10\n      <img class='header-icon' *ngIf=\"!isDemocrat && !isThird\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat && !isThird\" src=\"../../assets/images/democratIcon.png\">\n    </ion-title>\n    <p class=\"subtitle\" *ngIf=\"isThird\">\n    Party: {{partyName}}\n    </p>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\" >\n  <div class=\"center\">\n    <p><strong>TURN:</strong> {{(votes.turn%2)+1}} of 2 <strong>FUNDS:</strong> ${{votes.funds}} MILLION</p>\n  </div>\n  <div class=\"center\">\n    <p>{{getCurrentTurn()}}</p>\n  </div>\n  <!-- <ion-button class=\"option\" (click)=\"fundraise()\"><img src=\"../../assets/images/funds.png\"> Fundraise!</ion-button>\n  <ion-button class=\"option\" (click)=\"campaign()\"><img src=\"../../assets/images/campaign.png\"> Campaign!</ion-button>\n  <ion-button class=\"option\" (click)=\"advertising()\"><img src=\"../../assets/images/ads.png\"> Advertise!</ion-button> -->\n  <ion-button class=\"option\" (click)=\"fundraise()\">FUNDRAISE</ion-button>\n  <ion-button class=\"option\" (click)=\"advertising()\" [disabled]=\"!votes.funds\">\n    <div>\n      <p style=\"margin-bottom: 1px;\">ADVERTISE</p>\n      <p style=\"font-size: small; margin-top: 0px;\">COSTS $1 MILLION</p>\n      <p style=\"font-size: small; margin-top: 0px;\">({{votes.funds}} AVAILABLE)</p>\n    </div>\n  </ion-button>\n  <ion-button class=\"option\" (click)=\"campaign()\">CAMPAIGN</ion-button>\n</ion-content>\n";
+module.exports = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Round {{votes.round}} out of 10\n      <img class='header-icon' *ngIf=\"!isDemocrat && !isThird\" src=\"../../assets/images/republicanIcon.png\">\n      <img class='header-icon' *ngIf=\"isDemocrat && !isThird\" src=\"../../assets/images/democratIcon.png\">\n    </ion-title>\n    <p class=\"subtitle\" *ngIf=\"isThird\">\n    Party: {{partyName}}\n    </p>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\" >\n  <div class=\"center\">\n    <p><strong>TURN:</strong> {{(votes.turn%2)+1}} of 2 <strong>FUNDS:</strong> ${{votes.funds * 10}} MILLION</p>\n  </div>\n  <div class=\"center\">\n    <p>{{getCurrentTurn()}}</p>\n  </div>\n  <!-- <ion-button class=\"option\" (click)=\"fundraise()\"><img src=\"../../assets/images/funds.png\"> Fundraise!</ion-button>\n  <ion-button class=\"option\" (click)=\"campaign()\"><img src=\"../../assets/images/campaign.png\"> Campaign!</ion-button>\n  <ion-button class=\"option\" (click)=\"advertising()\"><img src=\"../../assets/images/ads.png\"> Advertise!</ion-button> -->\n  <ion-button class=\"option\" (click)=\"fundraise()\">FUNDRAISE</ion-button>\n  <ion-button class=\"option\" (click)=\"advertising()\" [disabled]=\"!votes.funds\">\n    <div>\n      <p style=\"margin-bottom: 1px;\">ADVERTISE</p>\n      <p style=\"font-size: small; margin-top: 0px;\">COSTS $10 MILLION</p>\n      <p style=\"font-size: small; margin-top: 0px;\">({{votes.funds}} AVAILABLE)</p>\n    </div>\n  </ion-button>\n  <ion-button class=\"option\" (click)=\"campaign()\">CAMPAIGN</ion-button>\n</ion-content>\n";
 
 /***/ })
 
